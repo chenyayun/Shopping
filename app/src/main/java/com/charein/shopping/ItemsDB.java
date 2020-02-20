@@ -25,4 +25,8 @@ public class ItemsDB {
         ItemsDB.add(new Item("bread", "bakery"));
         ItemsDB.add(new Item("butter", "Irma"));
     }
+
+    public void addItem(Item item) {
+        ItemsDB.add(item);
+    }
 }
