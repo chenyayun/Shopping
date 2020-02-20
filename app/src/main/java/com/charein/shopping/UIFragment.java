@@ -43,10 +43,17 @@ public class UIFragment extends Fragment {
     }
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        itemsDB = ItemsDB.getInstance();
+    }
+
+
+
+
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        itemsDB = ItemsDB.getInstance();
-
         editWhat = (EditText) view.findViewById(R.id.editWhat);
         editWhere = (EditText) view.findViewById(R.id.editWhere);
 

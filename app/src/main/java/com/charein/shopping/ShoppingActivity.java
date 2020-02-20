@@ -10,16 +10,16 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ShoppingActivity extends AppCompatActivity {
-    // GUI variables
-    private Button listItems;
-    private Button addItem;
-    private Button delItem;
-
-    private EditText editWhat;
-    private EditText editWhere;
-
-    // Model: Database of items
-    private ItemsDB itemsDB;
+//    // GUI variables
+//    private Button listItems;
+//    private Button addItem;
+//    private Button delItem;
+//
+//    private EditText editWhat;
+//    private EditText editWhere;
+//
+//    // Model: Database of items
+//    private ItemsDB itemsDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
