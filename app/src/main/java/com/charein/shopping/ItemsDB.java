@@ -1,12 +1,21 @@
 package com.charein.shopping;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class ItemsDB {
+    private static ItemsDB sInstance;
     private List<Item> ItemsDB;
 
-    public ItemsDB() {
+    public static ItemsDB getInstance() {
+        if (sInstance == null) {
+            sInstance = new ItemsDB();
+        }
+        return sInstance;
+    }
+
+    private ItemsDB() {
         ItemsDB = new ArrayList<>();
     }
 
@@ -28,5 +37,21 @@ public class ItemsDB {
 
     public void addItem(Item item) {
         ItemsDB.add(item);
+    }
+
+    public boolean delItem(Item item) {
+        boolean ret = false;
+
+        Iterator it = ItemsDB.iterator();
+        while (it.hasNext()) {
+            Item db = (Item) it.next();
+            if (db.getWhat().equals(item.getWhat())
+                    && db.getWhere().equals(item.getWhere())) {
+                it.remove();
+                ret = true;
+            }
+        }
+
+        return ret;
     }
 }
